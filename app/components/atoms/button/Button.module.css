@@ -1,0 +1,44 @@
+/* Button.module.css */
+.button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  margin: 5px;
+}
+
+/* Adjust the colors to match the ones from your image */
+.primary { background-color: #194885; color: white; } /* Example blue */
+.secondary { background-color: #F53300; color: white; } /* Example red */
+.secondary-light { background-color: #FF7E5C; color: white; } /* Example light orange */
+.orange-pale { background-color: #FB6300; color: white; } /* Example light orange */
+.warning { background-color: #fdd835; color: black; } /* Example yellow */
+.warning-yellow { background-color: #FEA700; color: white; } /* Example yellow */
+.info { background-color: #33b679; color: white; } /* Example green */
+.dark { background-color: #091A30; color: white; } /* Example dark */
+.light { background-color: #e8eaed; color: black; } /* Example light */
+.white {background-color: white; color: #F53300;}
+
+.small { font-size: 12px; padding: 5px 10px; }
+.medium { font-size: 16px; padding: 10px 20px; }
+.large { font-size: 20px; padding: 15px 30px; }
+
+.rounded { border-radius: 20px; }
+.elliptical { border-radius: 50px; }
+
+.shadow { box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.25); }
+
+/* Hover effect for interactive feedback */
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
