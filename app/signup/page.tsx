@@ -2,7 +2,6 @@
 import { useFormik } from "formik";
 import Button from "../components/atoms/button/button";
 import Input from "../components/atoms/input";
-import Jumbotron from "../components/compounds/jumbotron";
 
 
 interface FormValues {
