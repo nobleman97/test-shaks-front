@@ -39,7 +39,7 @@ const menu = [
 export default function Footer(){
     return(
         <>
-        <div className="flex justify-between items-center px-[10.4%] pt-[73px] pb-[115px] gap-[200px]">
+        <div className="flex flex-wrap justify-between items-center px-[10.4%] pt-[73px] pb-[115px] gap-[200px]">
 
             <div className="flex flex-col  max-w-[28.6%] grow">
                 <Image src={logo} alt="logo"/>

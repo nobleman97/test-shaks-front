@@ -11,8 +11,8 @@ export default function Home() {
   return (
     <>
       <Jumbotron image="/images/womenbg.png">
-        <div className="flex items-center flex-col gap-[30px] justify-center h-full px-[10.4%]">
-          <h1 className="text-6xl font-semibold">Social Media Marketing Agency</h1>
+        <div className="flex items-center flex-col gap-[30px] justify-center h-full px-[3.8%] md:px-[10.4%]">
+          <h1 className="md:text-6xl lg:text-6xl font-semibold text-center text-[40px]">Social Media Marketing Agency</h1>
 
           <p className="flex text-center text-2xl font-normal text-wrap max-w-[69%]">You want to start building a Steady stream of traffic and conversions for your business?</p>
             <Button style="text-2xl font-medium px-[70px] py-[10px] rounded-[40px]" color="dark">
@@ -21,7 +21,7 @@ export default function Home() {
         </div>
       </Jumbotron>
 
-      <section className="Aboutus-section h-[562px] w-full px-[10.4%] bg-[#FFFFFF] grid md:grid-cols-2">
+      <section className="flex flex-col Aboutus-section md:h-[562px] md:w-full px-[3.8%] md:px-[10.4%] bg-[#FFFFFF] md:grid md:grid-cols-2">
         
         <div className="mb-[114px] mt-[90px]">
           <h2 className="mb-[40px]  text-[#F53300] text-4xl font-semibold">About Us</h2>
@@ -37,17 +37,15 @@ export default function Home() {
 
         <div className="relative flex justify-center items-center">
 
-          <Image src={'/images/aboutus.png'} height={'561'} width={'559'} className={' absolute right-[-10%] bottom-0 z-[10]'} alt="aboutus"/>
-            <Image src={'/images/aboutusvector1.png'} height="434" width={'627'} alt="aboutusv" className="z-[8] bottom-0 absolute"/>
-          <Image src={'/images/aboutusvector2.png'} height='502' width={'1049'} alt="aboutusv" className="bottom-0 z-[8] right-[-27%] absolute"/>
+          <Image src={'/images/newhomejum.png'} height={'561'} width={'559'} className={''} alt="aboutus"/>
         </div>
 
 
       </section>
 
-      <section className="h-[90px] bg-[#091A30] w-full flex justify-center items-center  px-[10.4%]">
+      <section className="md:h-[90px]  bg-[#091A30] w-full flex justify-center items-center px-[3.8%]  md:px-[10.4%]">
 
-        <div className="relative flex gap-[80px] items-center justify-center h-[49.75px] w-full">
+        <div className="relative py-[11px] flex flex-wrap gap-x-[16px] gap-y-[40px] md:gap-[80px] items-center justify-between md:h-[49.75px] w-full">
           <Image src={'/images/nike.png'} alt='nikelogo' height={'48'} width={'48'}/>
           <Image src={'/images/microsoft.png'} alt='microsoft logo'  height={'28'} width={'128'}/>
           <Image src={'/images/cbs.png'} alt='cbs logo'  height={'48'} width={'48'}/>
@@ -58,14 +56,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#FFF] flex flex-col relative pt-[99px] items-center  px-[10.4%]">
+      <section className="bg-[#FFF] flex flex-col relative pt-[99px] items-center px-[3.8%] md:px-[10.4%]">
 
         <div className="h-[630px] bg-[url('/images/b2.png')] top-0 w-full bg-[#F53300] absolute z-[1]"></div>
 
-        <h2 className="z-[2]  text-[#FFF] text-4xl font-semibold mb-[10px]">View all of our marketing services</h2>
+        <h2 className="z-[2] text-center text-[#FFF] text-4xl font-semibold mb-[32px] md:mb-[10px]">View all of our marketing services</h2>
         <p className="z-[2]  text-[#FFF] text-2xl mb-[83px] font-light max-w-[55%] text-center" >We are more than just your social media marketing company.</p>
         
-        <div className="flex z-[2] gap-[30px] justify-center mt-[74px] mb-[91px]">
+        <div className="flex flex-wrap z-[2] gap-[30px] justify-center mt-[74px] mb-[91px]">
 
           <ServicesCard 
             services={'Social Media Management Services'} 
@@ -106,7 +104,7 @@ export default function Home() {
 
       </section>
 
-      <section className="bg-white flex flex-row text-[#000] gap-[224px]  px-[10.4%] pt-[79.64px] pb-[86px]">
+      <section className="bg-white flex flex-wrap md:flex-nowrap md:flex-row lg:flex-row text-[#000] gap-[224px]  px-[10.4%] pt-[79.64px] pb-[86px]">
 
         <article className="grow">
           <h1 className="text-4xl font-semibold mb-[22px]">Your <span className="text-[#FB6300]">No 1 </span>solution to social media and digital marketing problems.</h1>
@@ -149,8 +147,8 @@ export default function Home() {
 
       <section className="bg-white text-center pt-[66.64px] pb-[112px]">
 
-        <h2 className="text-[#000] text-4xl font-semibold">What our clients have to say!</h2>
-        <h3 className="text-[#F53300] text-2xl font-semibold">Check out these testimonials</h3>
+        <h2 className="text-[#000] text-2xl md:text-4xl font-semibold">What our clients have to say!</h2>
+        <h3 className="text-[#F53300] text-[16px] md:text-2xl font-semibold">Check out these testimonials</h3>
 
         <div className="testimonials  overflow-scroll px-[30px] mt-[53px] mb-[112px]">
           <div className=" flex gap-[30px] w-auto mr-[30px] ">
@@ -191,17 +189,17 @@ export default function Home() {
 
       </section>
 
-      <section className="bg-[#F53300] text-[#FFF] h-[90px] flex items-center justify-center">
-        <div className="flex gap-[141px] items-center">
-          <h2 className="font-semibold text-2xl">Want to improve your digital marketing ROI?</h2>
-          <Button color="white" style="rounded-[40px] px-[30px] py-[10px]">
+      <section className="bg-[#F53300] text-[#FFF] h-[90px] px-[17px] flex items-center justify-center">
+        <div className="flex gap-[31px] md:gap-[141px] items-center">
+          <h2 className="font-semibold w-[220px] md:w-full text-[14px] md:text-2xl flex-1">Want to improve your digital marketing ROI?</h2>
+          <Button color="white" style="rounded-[40px]  text-[12px] px-[30px] py-[10px]">
             Let&apos;s Talk
           </Button>
         </div>
       </section>
 
-      <section className="FAQ-section py-[80px] px-[149px] bg-[#091A30] text-[#fff]">
-        <h2 className="font-semibold text-4xl mb-[50px]">Frequently asked question</h2>
+      <section className="FAQ-section py-[80px] px-[3.8%] md:px-[149px] bg-[#091A30] text-[#fff]">
+        <h2 className="font-semibold text-2xl md:text-4xl mb-[50px]">Frequently asked question</h2>
         <FAQSection />
       </section>
 
@@ -210,15 +208,15 @@ export default function Home() {
         <TestimonialsVidSec />
       </section>
 
-      <section className="border-t-[1px]">
-        <div className="flex px-[122px] py-[52px] gap-[53px] bg-white items-center justify-center">
+      <section className="border-t-[1px] px-[3.8%] md:px-[122px] bg-white">
+        <div className="flex flex-wrap px-[40px] py-[52px] gap-[53px] bg-white items-center justify-center">
           <div className="flex flex-col">
-            <h2 className="text-4xl text-[#101010] font-semibold max-w-[60%]">Subscribe to Our Newsletter</h2>
-            <p className="text-[#F53300] max-w-[60%]">Join 50,000 marketers who get exclusive marketing tips that we only share with our subscribers.</p>
+            <h2 className="text-2xl md:text-4xl text-[#101010] font-semibold max-w-[60%]">Subscribe to Our Newsletter</h2>
+            <p className="text-[#F53300] max-w-full md:max-w-[60%]">Join 50,000 marketers who get exclusive marketing tips that we only share with our subscribers.</p>
           </div>
 
-          <div className="flex gap-[14px]">
-            <input className="rounded-[50px] py-[10px] px-[33px] w-[378px] border" type="text" name="email" id="" placeholder="Enter your email" />
+          <div className="flex flex-wrap  gap-[14px]">
+            <input className="rounded-[50px] py-[10px] px-[33px] w-full md:w-[378px] border" type="text" name="email" id="" placeholder="Enter your email" />
             <Button color="secondary" style="rounded-[40px] px-[30px] py-[10px]">
               Subscribe
             </Button>

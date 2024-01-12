@@ -39,10 +39,10 @@ const testimonials = [
   
   const TestimonialsVidSec = () => {
     return (
-      <div className="bg-white pt-[67px] px-[150px]">
-        <div className="max-w-6xl mx-auto text-center mb-[61px]">
-          <h2 className="text-4xl font-semibold text-[#101010]">We Help You Accelerate Growth with Social Media</h2>
-          <p className="text-2xl font-medium text-[#5C5C5C] mt-4">Watch these videos</p>
+      <div className="bg-white pt-[67px] px-[3.8%] md:px-[150px]">
+        <div className="max-w-6xl flex flex-col items-center justify-center  text-center mb-[61px]">
+          <h2 className="text-2xl md:text-4xl font-semibold text-[#101010] max-w-[90%] md:max-w-full">We Help You Accelerate Growth with Social Media</h2>
+          <p className="text-[14px] md:text-2xl font-medium text-[#5C5C5C] mt-4">Watch these videos</p>
         </div>
 
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
@@ -52,7 +52,7 @@ const testimonials = [
             <div key={index} className="mb-[66px]">
 
 
-              <div className="flex justify-center items-center mb-[18px] w-[555px] bg-[#14CEFD] h-[283px]">
+              <div className="flex justify-center items-center mb-[18px] w-full md:w-[555px] bg-[#14CEFD] h-[182px] md:h-[283px]">
                 
                 <Icon icon="lets-icons:video-fill" className="text-9xl text-[#091A30]"/>
     
