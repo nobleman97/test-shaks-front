@@ -10,16 +10,16 @@ export default function TestimonailCard({description, image, name, position}:{de
               
             </div>
 
-            <p className=" text-[8px] md:text-base font-normal">
+            <p className=" text-[8px] md:text-base font-normal text-start">
              {description}
             </p>
             
 
-            <div className="user flex gap-[24px] mt-[31px]">
-              <div>.</div>
-              <div className="flex flex-col">
+            <div className="user flex items-center gap-[24px] mt-[31px]">
+              <div className="relative h-[42px] md:h-[84px] md:w-[84px] w-[42px]"><Image src={image} alt="photo" fill/></div>
+              <div className="flex flex-col items-start">
                 <h3 className=" text-[8px] md:text-base font-semibold">{name}</h3>
-                <p className="text-[6px] md:text-base font-light text-xs">{position}</p>
+                <p className="text-[6px] md:text-[12px] font-light text-xs">{position}</p>
               </div>
             </div>
             

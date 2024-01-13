@@ -52,7 +52,7 @@ const testimonials = [
             <div key={index} className="mb-[66px]">
 
 
-              <div className="flex justify-center items-center mb-[18px] w-full md:w-[555px] bg-[#14CEFD] h-[182px] md:h-[283px]">
+              <div className="flex justify-center items-center mb-[18px] w-full md:w-[100%] bg-[#14CEFD] h-[182px] md:h-[283px]">
                 
                 <Icon icon="lets-icons:video-fill" className="text-9xl text-[#091A30]"/>
     

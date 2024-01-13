@@ -17,7 +17,7 @@ export default function AboutUs(){
 
     <section className="pb-[76px] bg-white">
 
-        <section className="relative flex gap-[46px] px-[10.4%] pt-[72px] bg-white text-black">
+        <section className="relative flex flex-col-reverse md:flex-row gap-[46px] px-[10.4%] pt-[72px] bg-white text-black">
             <div className="flex-1 mb-[55px]">
                 <p>Our company does this by managing social media networks such as Facebook, Instagram, Twitter, LinkedIn and Pinterest on your behalf. In short, we use relevant social media marketing services to help businesses grow and meet their goals, and because we&apos;re a full service agency that also offers the other digital marketing services mentioned, we&apos;re able to intertwine those services to support your social media efforts and vice versa for maximum results!</p>
             </div>

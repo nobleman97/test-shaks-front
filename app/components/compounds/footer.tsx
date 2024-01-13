@@ -39,11 +39,11 @@ const menu = [
 export default function Footer(){
     return(
         <>
-        <div className="flex flex-wrap justify-between items-center px-[10.4%] pt-[73px] pb-[115px] gap-[200px]">
+        <div className="flex flex-wrap justify-between items-center px-[10.4%] pt-[73px] pb-[115px] gap-[53px] md:gap-[200px]">
 
-            <div className="flex flex-col  max-w-[28.6%] grow">
+            <div className="flex flex-col md:max-w-[28.6%] grow">
                 <Image src={logo} alt="logo"/>
-                <p className=" mt-[42.5px] mb-[25px] text-base font-normal max-w-[263px]">Shakazu is a full-service social media marketing agency. Drive traffic and sales with our management services.</p>
+                <p className=" mt-[42.5px] mb-[25px] text-base font-normal max-w-[63.3%] md:max-w-[263px]">Shakazu is a full-service social media marketing agency. Drive traffic and sales with our management services.</p>
                 <div className="flex sociallinks justify-between  max-w-[263px] text-2xl">
                      <Icon icon="ic:sharp-facebook" />
                      <Icon icon="lucide:instagram" />
