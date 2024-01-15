@@ -39,7 +39,7 @@ export default function AboutUs(){
             </div>
 
 
-            <div className="flex-1 mt-[81px]">
+            <div className="flex-1 mt-[32px] md:mt-[81px]">
 
                 <h2 className="text-2xl md:text-[36px] font-semibold">Why we do it</h2>
 
@@ -50,8 +50,8 @@ export default function AboutUs(){
         </section>
 
 
-        <section className="flex  px-[10.4%] gap-[46px] text-center md:text-start bg-white text-black">
-            <div className="mt-[42px]">
+        <section className="flex px-[10.4%] gap-[46px] text-center md:text-start bg-white text-black">
+            <div className=" mt-[32px] md:mt-[42px]">
                 <h2 className="text-2xl md:text-[36px] font-semibold">How we do it</h2>
 
                 <p className="text-base">Every digital marketing agency has a sales pitch: you hear all about their capabilities, their technologies, and how incredible the results will be if you select their agency. But selecting an agency based on features is similar to marrying someone because you swiped right… there&apos;s a lot more than features when it comes to finding the right agency relationship.</p>
@@ -64,17 +64,17 @@ export default function AboutUs(){
             </div>
         </section>
 
-        <section className="bg-white flex flex-col md:flex-row text-center md:text-start px-[10.4%] pt-[65px] gap-[127px]">
+        <section className="bg-white flex flex-col md:flex-row text-center md:text-start px-[10.4%] pt-[65px] gap-[32px] md:gap-[127px]">
             <div className="flex flex-1 flex-col text-black">
-                <h2 className="text-4xl font-semibold mb-[22px]">Your <span className="text-[#F53300]">No 1</span> solution to social media and digital marketing problems.</h2>
-                <p className="text-[#F53300] italic">Making digital marketing and social media services accessible to individuals.</p>
+                <h2 className="text-2xl md:text-4xl font-semibold mb-[22px]">Your <span className="text-[#F53300]">No 1</span> solution to social media and digital marketing problems.</h2>
+                <p className="text-[#F53300] text-[12px] md:text-base  italic">Making digital marketing and social media services accessible to individuals.</p>
             </div>
 
             <div className="flex flex-1 flex-col text-black">
-                <h2 className="text-2xl font-semibold mb-[14px]">Ready to grow your business online?</h2>
-                <p className="mb-[15px] text-[#5C5C5C]">Whether you&apos;re trying to build brand awareness on social media or needing to drive more traffic from search engines, we&apos;re here to help you connect with your audience and hit those strategic goals</p>
+                <h2 className="text-base md:text-2xl font-semibold mb-[14px]">Ready to grow your business online?</h2>
+                <p className="mb-[15px] text-[#5C5C5C] text-[14px] md:text-base">Whether you&apos;re trying to build brand awareness on social media or needing to drive more traffic from search engines, we&apos;re here to help you connect with your audience and hit those strategic goals</p>
                 <div>
-                    <Button type={'button'} color='secondary' style="rounded-[40px] px-[30px] py-[10px]">
+                    <Button type={'button'} color='secondary' style="rounded-[40px] text-base px-[30px] py-[10px]">
                         Let&apos;s Talk
                     </Button>
                 </div>

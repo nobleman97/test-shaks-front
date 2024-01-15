@@ -2,15 +2,15 @@
 import { Icon } from "@iconify/react";
 import Button from "../atoms/button/button";
 
-export default function PriceCard({price, description, features}:{price: string, description: string, features: string[]}){
+export default function PriceCard({type, price, description, features}:{type: string, price: string, description: string, features: string[]}){
     return(
         <>
             <div className="rounded-[20px] border-[1px] max-w-[360px] shadow-custom bg-white text-black pb-[44px] pt-[62px]">
                 <div className="px-[44px] border-b-[1px] flex flex-col gap-[12px] text-center items-center justify-center">
                     <h2 className="text-[40px] font-medium">${price}</h2>
-                    <h3 className="text-2xl font-semibold"> BASIC </h3>
+                    <h3 className="text-2xl font-semibold"> {type} </h3>
 
-                    <p className="mb-[26px] text-[#424242] font-light">{description}</p>
+                    <p className="mb-[26px] text-[12px] md:text-base text-[#424242] font-light">{description}</p>
                 </div>
                 <div className="mt-[33px] flex items-center justify-center flex-col">
                     <div className="flex flex-col gap-[12px] justify-center items-start mb-[64px]">

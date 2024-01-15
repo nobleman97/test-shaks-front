@@ -9,15 +9,15 @@ export default function OurService(){
     return(
         <>
         <Jumbotron image="/images/aboutusjumbotronbg.png">
-            <div className="px-[10.4%] pt-[187px] pb-[148px] text-center flex flex-col items-center justify-center">
-                <h1 className="text-[38px] font-semibold mb-[41px]">View all of our marketing services</h1>
-                <p className="text-2xl font-light max-w-[60%]">
+            <div className="px-[3.8%] md:px-[10.4%] pt-[119px] md:pt-[187px] pb-[148px] text-center flex flex-col items-center justify-center">
+                <h1 className="text-[32px] md:text-[38px] font-semibold mb-[41px]">View all of our marketing services</h1>
+                <p className="text-base md:text-2xl font-light max-w-[85%] md:max-w-[60%]">
                     We are more than just your social media marketing company.
                 </p>
             </div>
         </Jumbotron>
 
-        <section className="bg-white text-black  px-[10.4%] py-[83px]">
+        <section className="bg-white text-black px-[3.8%] md:px-[10.4%] py-[83px]">
             <h2 className="text-[32px] font-semibold max-w-[555px] mb-[9px]">Social Media Management Services</h2>
             <p className="text-[#F53300] mb-[9px]">Increase Your Engagement & Sales From Social Media</p>
             <Button color="secondary" style="rounded-[40px] px-[70px] py-[10px]" >
@@ -60,7 +60,7 @@ export default function OurService(){
 
 
 
-        <section  className="bg-white text-black  px-[10.4%] py-[83px]">
+        <section  className="bg-white text-black  px-[3.8%] md:px-[10.4%] py-[83px]">
             <h2 className="text-[32px] font-semibold max-w-[555px] mb-[9px]">Email Marketing Services</h2>
             <p className="text-[#F53300] mb-[9px]">Increase Your Customer Base</p>
             <Button color="warning-yellow" style="rounded-[40px] px-[70px] py-[10px]" >
@@ -120,7 +120,7 @@ export default function OurService(){
 
                     <p>A lot of people still prefer to use email for communicating with businesses like yours, that&apos;s why as a marketer, you should take advantage of it! And the best way to do that is by using an effective email marketing strategy. Check the numbers below.</p>
 
-                <div className="flex flex-row justify-between gap-[35px] mt-[41px]">
+                <div className="flex flex-col md:flex-row justify-between gap-[35px] mt-[41px] mx-[24px] md:mx-0">
                 <div className="flex-1">
                     
                     <div className="mb-4 flex justify-between  border-b-[1px] border-t-[1px]">
@@ -209,7 +209,7 @@ export default function OurService(){
             </section>
         </section>
 
-        <section className=" px-[10.4%] bg-white text-black pb-[80px] py-[83px]">
+        <section className=" px-[3.8%] md:px-[10.4%] bg-white text-black pb-[80px] py-[83px]">
             <h2  className="text-[32px] font-semibold max-w-[555px] mb-[12px]">PPC Management Services</h2>
             <p className="text-[#F53300] mb-[12px]">For More Traffic & Conversion</p>
             <Button color="dark" style="rounded-[40px] px-[70px] py-[10px]" >
@@ -232,7 +232,7 @@ export default function OurService(){
                 <div className="flex flex-col gap-[20px]">
                     <h3>Our PPC Management Services Helps Your Business Grow in 2 Unique Ways:</h3>
 
-                    <div className="flex flex-row gap-[37px] my-[48px] text-black">
+                    <div className="flex flex-col md:flex-row gap-[37px] my-[48px] text-black mx-[46px] md:mx-[0px]">
                         <div className="flex-1 p-[32px] bg-[#E1F9FF] rounded-[10px] flex flex-col items-center justify-center">
                             <div className="icon text-5xl"><Icon icon="tabler:hand-click" /></div>
                             <div className="my-[24px]">
@@ -242,23 +242,23 @@ export default function OurService(){
                                 <p>Fuel your website with high-quality traffic and watch your conversions explode. With over 3 billion searches every day, these searches are full of people looking for answers and solutions to their problems. A percentage of these searches are problems that your business solves. Through the use of ppc management services, you can pull new customers to your business immediately.</p>
                             </div>
                         </div>
+
                         <div className="flex-1 p-[32px] bg-[#E1F9FF] rounded-[10px] flex flex-col items-center justify-center">
                             <div className="icon text-5xl"><Icon icon="material-symbols:heart-check" /></div>
                             <div className="my-[24px]">
-                                <h3 className="text-2xl text-center font-medium">Generate high-quality traffic and increase conversions:</h3>
+                                <h3 className="text-2xl text-center font-medium">Get results instantly:</h3>
                             </div>
                             <div>
-                                <p>Fuel your website with high-quality traffic and watch your conversions explode. With over 3 billion searches every day, these searches are full of people looking for answers and solutions to their problems. A percentage of these searches are problems that your business solves. Through the use of ppc management services, you can pull new customers to your business immediately.</p>
-                            </div>
-
+                                <p>Paid search ads will drive traffic to your website instantly once set up. Unlike organic search listings, you will be on the front page of search engines instantly by using Google ads or Bing ads. However, you pay per click on your search ads. It is important to make sure your ad spend goes toward clicks that actually convert into conversions. In addition, it is even more important that your cost per conversion (cpc) is not higher than the value of your customers.</p>
                             </div>
                         </div>
+                    </div>
                 </div>
 
                 <div className="flex flex-col gap-[20px]">
                     <h3 className="text-2xl font-semibold">PPC Advertising Statistics That Matters For Every Business:</h3>
 
-                    <div className="flex flex-row justify-between gap-[35px] my-[48px]">
+                    <div className="flex flex-col mx-[24px] md:mx-0 md:flex-row justify-between gap-[35px] my-[48px]">
                     <div className="flex-1">
                         
                         <div className="mb-4 flex justify-between  border-b-[1px] border-t-[1px]">
@@ -301,7 +301,7 @@ export default function OurService(){
                         <div className="mb-4 flex justify-between border-b-[1px] ">
                             <div>
                                 <h3 className="text-gray-700 font-semibold">Ad Campaigns</h3>
-                                <p className="text-gray-700">on Google’s display network have proven to boost web traffic by up to</p>
+                                <p className="text-gray-700">on Google&apos;s display network have proven to boost web traffic by up to</p>
                             </div>
                         
                         <p className="text-blue-600 font-bold text-xl">$40</p>
@@ -371,7 +371,7 @@ export default function OurService(){
             </section>
         </section>
 
-        <section className=" px-[10.4%] bg-white text-black pb-[80px] py-[83px]">
+        <section className=" px-[3.8%] md:px-[10.4%] bg-white text-black pb-[80px] py-[83px]">
                 <div>
                     <h2 className="text-center text-4xl font-medium">We&apos;ve driven over 983,287 leads for clients through digital marketing.</h2>
                 </div>
@@ -383,7 +383,7 @@ export default function OurService(){
                 </div>
         </section>
 
-        <section className="px-[10.4%] bg-[#091A30] py-[83px]">
+        <section className="px-[3.8%] md:px-[10.4%] bg-[#091A30] py-[83px]">
             <h2 className="mb-[50px]">Frequently asked question</h2>
             <FAQSection />
         </section>

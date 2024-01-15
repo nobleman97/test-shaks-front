@@ -2,6 +2,7 @@
 import { useFormik } from "formik";
 import Button from "../components/atoms/button/button";
 import Input from "../components/atoms/input";
+import Jumbotron from "../components/compounds/jumbotron";
 
 
 interface FormValues {
@@ -26,14 +27,27 @@ export default function Signup(){
 
     return(
         <>
-            <div className="flex flex-row">
-                <div className="w-[50%] h-full bg-white pt-[131px] pl-[150px] pr-[23px] text-black pb-[213px]">
-                    <h1 className="mb-[70px] font-semibold text-[42px]">Welcome to Shakazu Marketing Agency.</h1>
+         <span className="flex md:hidden">
+          <Jumbotron image="/images/signupbg.png">
+                <div className="px-[3.8%] md:px-[10.4%] pt-[110px] md:pt-[195px] flex flex-col items-center justify-center">
+                    <h1 className="text-[32px] md:text-[42px] font-semibold mb-[30px] text-center">
+                    Your <span className="text-black">No 1</span> solution to social media and digital marketing problems
+                    </h1>
+                    <p className="text-base md:text-2xl font-light text-center max-w-[90%] md:max-w-[52%]">
+                        Whether you&apos;re trying to build brand awareness on social media or needing to drive more traffic from search engines, we&apos;re here to help you connect with your audience and hit those strategic goals
+                    </p>
+                </div>
+            </Jumbotron>
+            </span>
+
+            <div className="flex md:flex-row flex-col">
+                <div className="md:w-[50%] h-full bg-white pt-[35px] md:pt-[131px] px-[3.8%] md:pl-[150px] md:pr-[23px] text-black pb-[54px] md:pb-[213px]">
+                    <h1 className="mb-[24px] md:mb-[70px] font-light md:font-semibold text-2xl md:text-[42px] text-center md:text-start ">Welcome to Shakazu Marketing Agency.</h1>
 
                     
                         <form onSubmit={formik.handleSubmit}>
-                            <h2 className="text-[#F53300] font-medium mb-[27px] text-2xl">Sign Up</h2>
-                                <div className="max-w-[362px] flex flex-col ">
+                            <h2 className="text-[#F53300] font-light md:font-medium mb-[27px] text-2xl text-center md:text-start">Sign Up</h2>
+                                <div className="w-full md:max-w-[362px] flex flex-col ">
                                     <Input type="text" label="Name" name="name" onChange={formik.handleChange} value={formik.values.name} />
                                     <Input type="email" label="Email" name="email" onChange={formik.handleChange} value={formik.values.email} />
                                     <Input type="password" label="Password" name="password" onChange={formik.handleChange} value={formik.values.password} />
@@ -48,7 +62,7 @@ export default function Signup(){
 
 
                 <div
-                    className=" text-white px-[120px] w-[50%] bg-cover bg-center bg-no-repeat flex justify-center items-center flex-col"
+                    className=" hidden text-white px-[120px] md:w-[50%] bg-cover bg-center bg-no-repeat md:flex justify-center items-center flex-col"
                     style={{ backgroundImage: `url(./images/signupbg.png)`, backgroundColor: '#F53300' }}
                 >
                     <h1 className="text-[36px] font-semibold mb-[24px]">

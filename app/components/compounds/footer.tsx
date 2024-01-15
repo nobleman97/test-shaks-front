@@ -10,28 +10,28 @@ const menu = [
     title: "Home",
     menu: [
     { title: "SEO", url: "/"},
+    { title: "Content", url: "/"},
+    { title: "Social Media", url: "/"},
     { title: "SEO", url: "/"},
-    { title: "SEO", url: "/"},
-    { title: "SEO", url: "/"},
-    { title: "SEO", url: "/"}]      
+]      
   },
    { 
     title: "Services",
     menu: [
     { title: "SEO", url: "/"},
+    { title: "Content", url: "/"},
+    { title: "Social Media", url: "/"},
     { title: "SEO", url: "/"},
-    { title: "SEO", url: "/"},
-    { title: "SEO", url: "/"},
-    { title: "SEO", url: "/"}]      
+]      
   },
    { 
     title: "Resources",
     menu: [
-    { title: "SEO", url: "/"},
-    { title: "SEO", url: "/"},
-    { title: "SEO", url: "/"},
-    { title: "SEO", url: "/"},
-    { title: "SEO", url: "/"}]      
+    { title: "About Us", url: "/"},
+    { title: "Contact Us", url: "/"},
+    { title: "Blog", url: "/"},
+    { title: "Reviews", url: "/"},
+]      
   }
 ]
 
@@ -39,7 +39,7 @@ const menu = [
 export default function Footer(){
     return(
         <>
-        <div className="flex flex-wrap justify-between items-center px-[10.4%] pt-[73px] pb-[115px] gap-[53px] md:gap-[200px]">
+        <div className=" bg-[#091A30] flex flex-wrap justify-between items-center px-[10.4%] pt-[73px] pb-[115px] gap-[53px] md:gap-[200px]">
 
             <div className="flex flex-col md:max-w-[28.6%] grow">
                 <Image src={logo} alt="logo"/>

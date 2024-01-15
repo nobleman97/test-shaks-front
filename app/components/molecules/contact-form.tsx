@@ -40,7 +40,7 @@ export default function ContactForm(){
 
     return (<>
      <form onSubmit={formik.handleSubmit}>
-        <div className="flex flex-wrap gap-x-[28px]">
+        <div className="flex justify-center md:justify-start flex-wrap gap-x-[28px]">
    
       <Input type="text" label="First name" name="firstname" onChange={formik.handleChange} value={formik.values.firstname} />
       <Input type="text" label="Last name" name="lastname" onChange={formik.handleChange} value={formik.values.lastname} />
