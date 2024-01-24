@@ -6,8 +6,10 @@ import Jumbotron from "./components/compounds/jumbotron";
 import TestimonialsVidSec from "./components/compounds/videoTestimonial";
 import ServicesCard from "./components/molecules/services-card";
 import TestimonailCard from "./components/molecules/testimonial-card";
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
+  const router = useRouter()
   return (
     <>
       <Jumbotron image="/images/womenbg.png">
@@ -15,7 +17,7 @@ export default function Home() {
           <h1 className="md:text-6xl lg:text-6xl font-semibold text-center text-[40px]">Social Media Marketing Agency</h1>
 
           <p className="flex text-center text-base md:text-2xl font-normal text-wrap max-w-[69%]">You want to start building a Steady stream of traffic and conversions for your business?</p>
-            <Button style="text-2xl font-medium px-[70px] py-[10px] rounded-[40px]" color="dark">
+            <Button style="text-2xl font-medium px-[70px] py-[10px] rounded-[40px]"  onClick={() => router.push('/contact-us')}  color="dark">
               Let&apos;s talk
             </Button>
         </div>

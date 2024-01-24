@@ -3,6 +3,7 @@ import { ElementType, useState } from "react";
 import { Icon } from '@iconify/react';
 import Jumbotron from "../components/compounds/jumbotron";
 import ContactForm from "../components/molecules/contact-form";
+import axios from 'axios'
 
 export default function ContactUs(){ 
 
@@ -17,16 +18,7 @@ export default function ContactUs(){
         country: '',
         message: '',
       });
-    
-      const handleSubmit = (e: any) => {
-        e.preventDefault();
-        // Handle the form submission logic, like sending data to an API
-      };
-    
-      const handleChange = (e: any) => {
-        const { name, value } = e.target;
-        setFormData((prev: any) => ({ ...prev, [name]: value }));
-      };
+
 
     return(
         <>

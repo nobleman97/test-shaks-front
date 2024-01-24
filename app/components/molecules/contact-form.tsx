@@ -2,6 +2,7 @@ import Input from "../atoms/input";
 import countries from "../../lib/countries.json"
 import Button from "../atoms/button/button";
 import { useFormik } from 'formik';
+import axios from "axios";
 
 interface FormValues {
     firstname: string;
@@ -35,6 +36,12 @@ export default function ContactForm(){
         onSubmit: (values) => {
           console.log(values);
           // Handle form submission, such as sending data to an API
+
+            axios.post('/api/sendEmail',values,{ headers: {
+                'Content-Type': 'application/json',
+            }}).then(res =>{
+                console.log({res})
+            });
         },
       });
 
