@@ -1,5 +1,5 @@
 // components/FAQSection.js
-import AccordionItem from '../molecules/AccordionItem';
+import AccordionItem from '@/app/components/molecules/accordionItem';
 
 const faqs = [
     {

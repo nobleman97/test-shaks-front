@@ -37,10 +37,12 @@ export default function ContactForm(){
           console.log(values);
           // Handle form submission, such as sending data to an API
 
-            axios.post('/api/sendEmail',values,{ headers: {
+            axios.post('/api/hello',values,{ headers: {
                 'Content-Type': 'application/json',
-            }}).then(res =>{
+            }}).then(res => {
                 console.log({res})
+            }).catch((error) => {
+              console.log({error})
             });
         },
       });
