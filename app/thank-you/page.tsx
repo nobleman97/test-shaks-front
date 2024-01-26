@@ -1,9 +1,11 @@
 "use client"
 import { Icon } from "@iconify/react";
+import { useRouter } from "next/navigation";
 import Button from "../components/atoms/button/button";
 import Jumbotron from "../components/compounds/jumbotron";
 
 export default function ThankYou(){ 
+    const router = useRouter();
     return(
         <>
 
@@ -26,8 +28,8 @@ export default function ThankYou(){
 
                     <h1 className="text-[42px] font-semibold mb-[4px]">Thank you!</h1>
                     <p className=" text-center font-light text-base mb-[42px] md:mb-[50px] ">Your message has been received, we&apos;ll <br></br>update you shortly.</p>
-                    <Button color="secondary" style="rounded-[40px] px-[30px] py-[10px]">
-                    Continue to Home
+                    <Button color="secondary" style="rounded-[40px] px-[30px] py-[10px]" onClick={()=>{ router.push('/')}}>
+                        Continue to Home
                     </Button>
 
                 </div>

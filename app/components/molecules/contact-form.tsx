@@ -3,6 +3,7 @@ import countries from "../../lib/countries.json"
 import Button from "../atoms/button/button";
 import { useFormik } from 'formik';
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 interface FormValues {
     firstname: string;
@@ -19,7 +20,7 @@ interface FormValues {
 
 
 export default function ContactForm(){
-
+    const router = useRouter()
     const formik = useFormik<FormValues>({
         initialValues: {
             firstname: '',
@@ -29,7 +30,7 @@ export default function ContactForm(){
             companyname: '',
             industry: '',
             annualrevenue: '',
-            country: '', // Assuming the value will be the country code
+            country: '', 
             message: '',
             subscribe: false,
           },
@@ -40,6 +41,7 @@ export default function ContactForm(){
             axios.post('/api/hello',values,{ headers: {
                 'Content-Type': 'application/json',
             }}).then(res => {
+              router.push('thank-you')
                 console.log({res})
             }).catch((error) => {
               console.log({error})
@@ -48,6 +50,7 @@ export default function ContactForm(){
       });
 
     return (<>
+    
      <form onSubmit={formik.handleSubmit}>
         <div className="flex justify-center md:justify-start flex-wrap gap-x-[28px]">
    
@@ -57,7 +60,7 @@ export default function ContactForm(){
       <Input type="text" label="Phone" name="phone" onChange={formik.handleChange} value={formik.values.phone} />
       <Input type="text" label="Company name" name="companyname" onChange={formik.handleChange} value={formik.values.companyname} />
       <Input type="text" label="Industry" name="industry" onChange={formik.handleChange} value={formik.values.industry} />
-      <Input type="text" label="Annual Revenue" name="annualrevenue" onChange={formik.handleChange} value={formik.values.annualrevenue} />
+      <Input type="number" label="Annual Revenue ($)" name="annualrevenue" onChange={formik.handleChange} value={formik.values.annualrevenue} />
       <Input
         componentType="select"
         name="country"
@@ -68,7 +71,7 @@ export default function ContactForm(){
       />
       <Input componentType="textarea" name="message" label="Your Message" onChange={formik.handleChange} value={formik.values.message} />
 
-      <label htmlFor="subscribe" className="inline-flex items-center mt-3 w-full">
+      {/* <label htmlFor="subscribe" className="inline-flex items-center mt-3 w-full">
         <Input
           componentType="checkbox"
           name="subscribe"
@@ -77,7 +80,7 @@ export default function ContactForm(){
           onChange={formik.handleChange}
           style="form-checkbox h-5 w-5 text-blue-600"
         />
-      </label>
+      </label> */}
 
       <Button type="submit" color="secondary" style="rounded-[40px] px-[70px] py-[10px]">
         Submit
