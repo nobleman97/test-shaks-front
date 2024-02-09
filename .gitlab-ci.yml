@@ -3,10 +3,9 @@ stages:
   
 
 variables:
-  DOCKER_REGISTRY: "4568910/shakazu-frontend"
+  DOCKER_REGISTRY: "docker.io/4568910/shakazu-frontend"
   CI_REGISTRY_USER: "4568910"
   CI_REGISTRY_PASSWORD: $DOCKER_PASSWORD
-
 
 
 build_image:
