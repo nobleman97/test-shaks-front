@@ -3,12 +3,15 @@ import { useFormik } from "formik";
 import Button from "../components/atoms/button/button";
 import Input from "../components/atoms/input";
 import Jumbotron from "../components/compounds/jumbotron";
+import axios from "axios"
 
 
 interface FormValues {
     name: string;
     email: string;
-    password: string;
+    companyname: string;
+    phone: string;
+    // password: string;
   }
 
 export default function Signup(){ 
@@ -17,13 +20,23 @@ export default function Signup(){
         initialValues: {
             name: '',
             email: '',
-            password: ''
+            companyname: '',
+            phone: '',
+            // password: ''
           },
         onSubmit: (values) => {
           console.log(values);
           // Handle form submission, such as sending data to an API
+
+        //   store data in db
         },
       });
+
+    //   const callWebHook = async () => {
+
+    //     // https://hooks.zapier.com/hooks/catch/17686904/3gnyfbw/
+    //     axios.post()
+    //   }
 
     return(
         <>
@@ -42,7 +55,7 @@ export default function Signup(){
 
             <div className="flex md:flex-row flex-col">
                 <div className="md:w-[50%] h-full bg-white pt-[35px] md:pt-[131px] px-[3.8%] md:pl-[150px] md:pr-[23px] text-black pb-[54px] md:pb-[213px]">
-                    <h1 className="mb-[24px] md:mb-[70px] font-light md:font-semibold text-2xl md:text-[42px] text-center md:text-start ">Welcome to Shakazu Marketing Agency.</h1>
+                    <h1 className="mb-[24px] md:mb-[70px] font-light md:font-semibold text-2xl md:text-[42px] text-center md:text-start leading-10">Welcome to Shakazu Marketing Agency.</h1>
 
                     
                         <form onSubmit={formik.handleSubmit}>
@@ -50,11 +63,28 @@ export default function Signup(){
                                 <div className="w-full md:max-w-[362px] flex flex-col ">
                                     <Input type="text" label="Name" name="name" onChange={formik.handleChange} value={formik.values.name} />
                                     <Input type="email" label="Email" name="email" onChange={formik.handleChange} value={formik.values.email} />
-                                    <Input type="password" label="Password" name="password" onChange={formik.handleChange} value={formik.values.password} />
+                                    <Input type="text" label="Company Name" name="companyname" onChange={formik.handleChange} value={formik.values.companyname} />
+                                    {/* <Input type="password" label="Password" name="password" onChange={formik.handleChange} value={formik.values.password} /> */}
+                                    <Input type="phone" label="Phone number" name="phone" onChange={formik.handleChange} value={formik.values.phone} />
 
                                     <Button type="submit" color="secondary" style="px-[90px] py-[10px] rounded-[40px] text-[16px]">
                                         Sign Up
                                     </Button>
+
+
+                                    *
+{/* Company Name
+
+Logo URL
+
+Email Address
+ 
+User's Name */}
+
+
+
+
+
                                 </div>
                         </form>
 
