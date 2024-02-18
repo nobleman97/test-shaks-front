@@ -6,46 +6,37 @@ import Jumbotron from "../components/compounds/jumbotron";
 import * as Yup from 'yup';
 import axios from "axios";
 import { toast } from "react-toastify";
+import Cookies from 'js-cookie';
 
 interface FormValues {
-    name: string;
     email: string;
-    companyname: string;
-    phone: string;
     password: string;
-    confirmPassword: string;
   }
 
-export default function Signup(){ 
+export default function Login(){ 
 
     const validationSchema = Yup.object().shape({
-        name: Yup.string().required('Name is required'),
         email: Yup.string().email('Invalid email address').required('Email is required'),
-        companyname: Yup.string().required('Company name is required'),
-        phone: Yup.string().required('Phone number is required'),
-        password: Yup.string().min(8, 'Password must be at least 8 characters').required('Password is required'),
-        confirmPassword: Yup.string()
-        .oneOf([Yup.ref('password')], 'Passwords must match')
-        .required('Confirm password is required'),
+        password: Yup.string().required('Password is required'),
       });
 
     const formik = useFormik<FormValues>({
         initialValues: {
-            name: '',
             email: '',
-            companyname: '',
-            phone: '',
             password: '',
-            confirmPassword: ''
           },
           validationSchema: validationSchema,
         onSubmit: (values) => {
           console.log(values);
           // Handle form submission, such as sending data to an API
-            axios.post('/api/users/create', values).then(res => {
-                toast.success('User created')
-            }).catch(err => {
-                toast.error('error creating user')
+            axios.post('/api/users/login', values)
+            .then(res => {
+                console.log({res: res})
+                Cookies.set('token', res.data.data.data.access_token)  
+                toast.success('Logged in!')
+            })
+            .catch(err => {
+                toast.error('error Logging in user')
             })
         },
       });
@@ -72,19 +63,9 @@ export default function Signup(){
 
                     
                         <form onSubmit={formik.handleSubmit}>
-                            <h2 className="text-[#F53300] font-light md:font-medium mb-[27px] text-2xl text-center md:text-start">Sign Up</h2>
+                            <h2 className="text-[#F53300] font-light md:font-medium mb-[27px] text-2xl text-center md:text-start">Login</h2>
                                 <div className="w-full md:max-w-[362px] flex flex-col ">
-                                    <Input type="text" label="Name" name="name" onChange={formik.handleChange} value={formik.values.name} error={formik.touched.name && formik.errors.name} />
                                     <Input type="email" label="Email" name="email" onChange={formik.handleChange} value={formik.values.email}  error={formik.touched.email && formik.errors.email} />
-                                    <Input type="text" label="Company Name" name="companyname" onChange={formik.handleChange} value={formik.values.companyname} error={formik.touched.companyname && formik.errors.companyname}/>
-                                    <Input 
-                                        type="phone" 
-                                        label="Phone number" 
-                                        name="phone" 
-                                        onChange={formik.handleChange} 
-                                        value={formik.values.phone} 
-                                        error={formik.touched.phone && formik.errors.phone}
-                                    />
                                     <Input 
                                         type="password" 
                                         label="Password" 
@@ -93,18 +74,10 @@ export default function Signup(){
                                         value={formik.values.password} 
                                         error={formik.touched.password && formik.errors.password}
                                     />
-                                    <Input 
-                                        type="password" 
-                                        label="Confirm Password" 
-                                        name="confirmPassword" 
-                                        onChange={formik.handleChange} 
-                                        value={formik.values.confirmPassword} 
-                                        error={formik.touched.confirmPassword && formik.errors.confirmPassword}
-                                    />
 
 
                                     <Button type="submit" color="secondary" style="px-[90px] py-[10px] rounded-[40px] text-[16px]">
-                                        Sign Up
+                                        Login
                                     </Button>
 
                                 </div>

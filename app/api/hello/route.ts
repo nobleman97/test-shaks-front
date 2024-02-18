@@ -21,6 +21,8 @@ export async function POST( req: Request) {
     });
 
     try {
+
+    //send out emails to leads who fill the form 
      const email = await mailgunClient.messages.create(
         process.env.MAILGUN_DOMAIN,
         {
@@ -41,7 +43,7 @@ export async function POST( req: Request) {
       return NextResponse.json({ message: "Email sent successfully", data: email }, {status: 200});
 
     } catch (error: any) {
-        return NextResponse.json({error: error.message}, {status: error.status});
+      return NextResponse.json({error: error.message}, {status: error.status});
     }
   
 

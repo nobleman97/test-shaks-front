@@ -10,6 +10,7 @@ type InputProps = {
   style?: string;
   checked?: boolean; // For checkbox only
   onChange?: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+  error: any
 };
 
 const Input: React.FC<InputProps> = ({
@@ -22,6 +23,7 @@ const Input: React.FC<InputProps> = ({
   style = '',
   checked,
   onChange,
+  error
 }) => {
   const baseStyle = 'p-[10px] rounded-[4px] border-[1px]';
   const combinedStyle = `${baseStyle} ${style}`;
@@ -94,6 +96,7 @@ const Input: React.FC<InputProps> = ({
           {label}
       </label>}
       {renderInput()}
+      {error ? <div className="text-red-500">{error}</div> : null}
     </div>
   );
 };
