@@ -15,7 +15,6 @@ build_image:
     - docker:dind
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
-      when: merge
   script:
     - docker build -t $DOCKER_REGISTRY:$CI_PIPELINE_IID .
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD 
