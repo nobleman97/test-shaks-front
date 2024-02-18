@@ -13,14 +13,15 @@ build_image:
   image: docker:stable
   services:
     - docker:dind
+  rules:
+    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main" && $CI_MERGE_REQUEST_IID'
   script:
     - docker build -t $DOCKER_REGISTRY:$CI_PIPELINE_IID .
-
-    - echo "$CI_REGISTRY_PASSWORD" && echo "& $DOCKER_PASSWORD"
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD #$DOCKER_REGISTRY
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD 
     - docker push $DOCKER_REGISTRY:$CI_PIPELINE_IID
     - docker tag $DOCKER_REGISTRY:$CI_PIPELINE_IID $DOCKER_REGISTRY:latest # make the most recent latest
     - docker push $DOCKER_REGISTRY:latest       # push as latest
+
 
 
 
