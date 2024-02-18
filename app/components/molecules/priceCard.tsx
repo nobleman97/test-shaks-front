@@ -1,21 +1,46 @@
 "use client"
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Feature } from "@/app/lib/types";
 import Button from "../atoms/button/button";
 import FeatureItem from "./featureItem";
 import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
+import axios from "axios";
 
 
 
 
-export default function PriceCard({type, price, description, features}:{type: string, price: number, description: string, features: Feature[]}) {
+export default function PriceCard({type, id, price, description, features}:{type: string, id:any,  price: number, description: string, features: Feature[]}) {
     // State to track if all features should be shown
     const [showAllFeatures, setShowAllFeatures] = useState(false);
+    const [token, setToken] = useState<any>(null);
+    const [planId, setPlanId] = useState<any>(id);
+
     const router = useRouter()
     // Function to toggle the visibility of all features
     const toggleFeaturesVisibility = () => {
         setShowAllFeatures(!showAllFeatures);
     };
+
+    const handlePaymentRequest = async () => {
+        try {
+            const resp = await axios.post('/api/payment/create',{planId, token});
+            const paymentUrl = resp.data.data.data;
+            router.push(paymentUrl)
+
+        } catch (error: any) {
+            console.log(error.message)
+            if(error.response.status === 401){
+                router.push('/login')
+            }
+            console.log(error.response)
+        }
+    }
+
+    useEffect(() => {
+        const tok = Cookies.get('token')
+        setToken(tok)
+    },[])
 
     // Determine the features to display based on `showAllFeatures`
     const displayedFeatures = showAllFeatures ? features : features.slice(0, 4);
@@ -39,9 +64,16 @@ export default function PriceCard({type, price, description, features}:{type: st
                             {showAllFeatures ? 'See Less' : 'See More'}
                         </div>
                     )}
-                    <Button color="secondary" type="button" style="rounded-[40px] px-[70px] py-[10px]" onClick={()=>{router.push('/contact-us')}}>
-                        Get My Quote
-                    </Button>
+
+                    {token ? (
+                        <Button color="secondary" type="button" style="rounded-[40px] px-[70px] py-[10px]" onClick={handlePaymentRequest}>
+                            Start Now
+                        </Button>
+                    ):(
+                        <Button color="secondary" type="button" style="rounded-[40px] px-[70px] py-[10px]" onClick={()=>{router.push('/contact-us')}}>
+                            Get My Quote
+                        </Button>
+                    )}
                 </div>
             </div>
         </>

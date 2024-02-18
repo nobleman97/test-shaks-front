@@ -4,6 +4,9 @@ import Footer from './components/compounds/footer';
 import Header from './components/compounds/header';
 import './globals.css'
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const inter = Inter({ subsets: ['latin'] })
 
 const poppins = Poppins({
@@ -29,6 +32,7 @@ export default function RootLayout({
         <main className="w-full">
           <Header />
             {children}
+            <ToastContainer />
           <Footer />
         </main>
       </body>

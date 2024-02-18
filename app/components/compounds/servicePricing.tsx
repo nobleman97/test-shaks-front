@@ -53,7 +53,7 @@ export default function ServicePricing(){
                 <section className="bg-white text-black flex flex-col flex-wrap md:flex-row gap-[30px]">
                 {filteredPlans.length > 0 ? (
                     filteredPlans.map(({price, billingCycle, currency, description, name, id, features}) => (
-                        <PriceCard key={id} type={name} price={price} description={description} features={features} />
+                        <PriceCard key={id} id={id} type={name} price={price} description={description} features={features} />
                     ))
                 ) : (
                     <p>No plans available for the selected billing cycle.</p>
