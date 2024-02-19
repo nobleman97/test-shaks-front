@@ -54,13 +54,61 @@ export default function ContactForm(){
      <form onSubmit={formik.handleSubmit}>
         <div className="flex justify-center md:justify-start flex-wrap gap-x-[28px]">
    
-      <Input type="text" label="First name" name="firstname" onChange={formik.handleChange} value={formik.values.firstname} />
-      <Input type="text" label="Last name" name="lastname" onChange={formik.handleChange} value={formik.values.lastname} />
-      <Input type="text" label="Email" name="email" onChange={formik.handleChange} value={formik.values.email} />
-      <Input type="text" label="Phone" name="phone" onChange={formik.handleChange} value={formik.values.phone} />
-      <Input type="text" label="Company name" name="companyname" onChange={formik.handleChange} value={formik.values.companyname} />
-      <Input type="text" label="Industry" name="industry" onChange={formik.handleChange} value={formik.values.industry} />
-      <Input type="number" label="Annual Revenue ($)" name="annualrevenue" onChange={formik.handleChange} value={formik.values.annualrevenue} />
+      <Input 
+        type="text" 
+        label="First name" 
+        name="firstname" 
+        onChange={formik.handleChange} 
+        value={formik.values.firstname} 
+        error={formik.touched.firstname && formik.errors.firstname}
+        />
+      <Input 
+        type="text" 
+        label="Last name" 
+        name="lastname" 
+        onChange={formik.handleChange} 
+        value={formik.values.lastname} 
+        error={formik.touched.lastname && formik.errors.lastname}
+        />
+      <Input 
+        type="text" 
+        label="Email" name="email" 
+        onChange={formik.handleChange} 
+        value={formik.values.email} 
+        error={formik.touched.email && formik.errors.email}
+        />
+      <Input 
+        type="text" 
+        label="Phone" 
+        name="phone" 
+        onChange={formik.handleChange} 
+        value={formik.values.phone} 
+        error={formik.touched.phone && formik.errors.phone}
+        />
+      <Input 
+        type="text" 
+        label="Company name" 
+        name="companyname" 
+        onChange={formik.handleChange} 
+        value={formik.values.companyname} 
+        error={formik.touched.companyname && formik.errors.companyname}
+        />
+      <Input 
+        type="text" 
+        label="Industry" 
+        name="industry" 
+        onChange={formik.handleChange} 
+        value={formik.values.industry} 
+        error={formik.touched.industry && formik.errors.industry}
+        />
+      <Input 
+        type="number" 
+        label="Annual Revenue ($)" 
+        name="annualrevenue" 
+        onChange={formik.handleChange} 
+        value={formik.values.annualrevenue}
+        error={formik.touched.annualrevenue && formik.errors.annualrevenue} 
+      />
       <Input
         componentType="select"
         name="country"
@@ -68,8 +116,16 @@ export default function ContactForm(){
         options={countries}
         onChange={formik.handleChange}
         value={formik.values.country}
+        error={formik.touched.country && formik.errors.country}
       />
-      <Input componentType="textarea" name="message" label="Your Message" onChange={formik.handleChange} value={formik.values.message} />
+      <Input 
+        componentType="textarea" 
+        name="message" 
+        label="Your Message" 
+        onChange={formik.handleChange} 
+        value={formik.values.message} 
+        error={formik.touched.message && formik.errors.message}
+        />
 
       {/* <label htmlFor="subscribe" className="inline-flex items-center mt-3 w-full">
         <Input

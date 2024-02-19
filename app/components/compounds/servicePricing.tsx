@@ -22,7 +22,7 @@ export default function ServicePricing(){
         if (plans === null) {
           fetchPlans();
         }
-      }, [])
+      }, [plans])
 
       const handleToggleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSelectedBillingCycle(event.target.checked ? 'YEARLY' : 'MONTHLY');
