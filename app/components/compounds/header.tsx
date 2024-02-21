@@ -1,6 +1,6 @@
 import Image from "@/node_modules/next/image";
 import Menu from "../molecules/menu";
-import logo from "@/public/images/logo.png"
+import logo from "@/public/images/logo.svg"
 import Link from "next/link";
 
 export default function Header( ) {
