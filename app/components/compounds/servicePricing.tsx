@@ -5,13 +5,13 @@ import { useEffect, useState } from "react";
 import PriceCard from "../molecules/priceCard";
 
 export default function ServicePricing(){
-
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
     const [ plans, setPlans] = useState<null|Plan[]>(null)
     const [selectedBillingCycle, setSelectedBillingCycle] = useState<'MONTHLY' | 'YEARLY'>('MONTHLY');
 
     const fetchPlans = async () => {
         try {
-          const response = await axios('/api/plans');
+          const response = await axios(baseUrl + '/api/plans');
           setPlans(response.data.data.data);
         } catch (error) {
           console.error("Failed to fetch plans:", error);
@@ -52,7 +52,7 @@ export default function ServicePricing(){
 
                 <section className="bg-white text-black flex flex-col flex-wrap md:flex-row gap-[30px]">
                 {filteredPlans.length > 0 ? (
-                    filteredPlans.map(({price, billingCycle, currency, description, name, id, features}) => (
+                    filteredPlans.map(({price, description, name, id, features}) => (
                         <PriceCard key={id} id={id} type={name} price={price} description={description} features={features} />
                     ))
                 ) : (
