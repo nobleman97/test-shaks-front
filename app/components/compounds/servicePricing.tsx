@@ -11,7 +11,8 @@ export default function ServicePricing(){
 
     const fetchPlans = async () => {
         try {
-          const response = await axios(baseUrl + '/api/plans');
+          // const response = await axios(baseUrl + '/api/plans');
+          const response = await axios('/api/plans');
           setPlans(response.data.data.data);
         } catch (error) {
           console.error("Failed to fetch plans:", error);
