@@ -5,6 +5,8 @@ WORKDIR /app
 COPY package.json .
 RUN npm install
 
+# ENV NEXT_PUBLIC_BASE_URL="http://shakazu.com"
+
 # Copy the application code
 COPY . .
 

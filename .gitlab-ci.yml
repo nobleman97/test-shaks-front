@@ -8,7 +8,7 @@ variables:
   CI_REGISTRY_PASSWORD: "$DOCKER_PASSWORD"
 
 
-build_image:
+build_and_push_frontend_image:
   stage: build
   image: docker:stable
   services:
