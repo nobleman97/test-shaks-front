@@ -6,6 +6,7 @@ COPY package.json .
 RUN npm install
 
 ENV NEXT_PUBLIC_BASE_URL="localhost:3000"
+ENV BACKEND_URL="https://api.shakazu.com"
 
 # Copy the application code
 COPY . .
