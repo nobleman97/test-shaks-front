@@ -11,8 +11,8 @@ export default function ServicePricing(){
 
     const fetchPlans = async () => {
         try {
-          const response = await axios(baseUrl + '/api/plans');
-          // const response = await axios('localhost:3000/api/plans');
+          // const response = await axios(baseUrl + '/api/plans');
+          const response = await axios('localhost:3000/api/plans');
 
           console.log({response});
 
