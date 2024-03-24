@@ -21,7 +21,7 @@ try {
 
     redirectUrl.searchParams.set("status", isSuccessful == "success" ? "success" : "failed");
 
-    return NextResponse.rewrite(redirectUrl);
+    return NextResponse.redirect(redirectUrl);
   } catch (error) {
     console.error({error});
 
@@ -29,6 +29,6 @@ try {
 
     redirectUrl.searchParams.set("status", "failed");
 
-    return NextResponse.rewrite(redirectUrl);
+    return NextResponse.redirect(redirectUrl);
   }
 }

@@ -5,7 +5,6 @@ export async function POST( req: NextRequest) {
     try {
 
         const body = await req.json();
-        console.log({body});
         
         const url = `${process.env.BACKEND_URL}/users`
         const user: any = await axios.post(url, body);
@@ -15,8 +14,7 @@ export async function POST( req: NextRequest) {
         return NextResponse.json({ message: "User created successfully", data }, {status: 200});
 
     } catch (error: any) {
-      console.log(error.message)
-      return NextResponse.json({error: error.message}, {status: error.status});
+      return NextResponse.json({error: error.response.data.message}, {status: error.status});
     }
   
   

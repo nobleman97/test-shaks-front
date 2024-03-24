@@ -7,6 +7,7 @@ import * as Yup from 'yup';
 import axios from "axios";
 import { toast } from "react-toastify";
 import Cookies from 'js-cookie';
+import { useRouter } from "next/navigation";
 
 interface FormValues {
     email: string;
@@ -14,7 +15,7 @@ interface FormValues {
   }
 
 export default function Login(){ 
-
+    const router = useRouter()
     const validationSchema = Yup.object().shape({
         email: Yup.string().email('Invalid email address').required('Email is required'),
         password: Yup.string().required('Password is required'),
@@ -34,6 +35,7 @@ export default function Login(){
                 console.log({res: res})
                 Cookies.set('token', res.data.data.data.access_token)  
                 toast.success('Logged in!')
+                router.push('pricing')
             })
             .catch(err => {
                 toast.error('error Logging in user')
