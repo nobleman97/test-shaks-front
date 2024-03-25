@@ -22,6 +22,7 @@ export async function POST( req: Request) {
         from: 'Shakazu <onboarding@resend.dev>',
         to: [body.email],
         subject: 'Thank You for Contacting Us',
+        text: '',
         react: ThankYouEmail({   
           customerName: body.firstname,  
           yourName: "Ola", 

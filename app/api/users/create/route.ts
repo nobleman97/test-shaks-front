@@ -18,6 +18,7 @@ export async function POST( req: NextRequest) {
           const emailSent = await resend.emails.send({
             from: 'Shakazu <onboarding@resend.dev>',
             to: [body.email],
+            text: "",
             subject: 'Thank You for Contacting Us',
             react: SignupThankYouEmail({   
               name: body.firstname,  
