@@ -57,8 +57,8 @@ export default function AboutUs(){
                 <h2 className="text-2xl md:text-[36px] font-semibold mb-[10px]">Our Philosophy</h2>
 
                 <p className="text-base">
-                We believe in the transformative power of digital media. It's not just about being present
-                online; it's about making a statement, sparking conversations, and building a 
+                We believe in the transformative power of digital media. It&apos;s not just about being present
+                online; it&apos;s about making a statement, sparking conversations, and building a 
                 community. Our philosophy centers on three pillars:
                 </p>
                 <ul className="list-disc">
@@ -106,11 +106,11 @@ export default function AboutUs(){
                 <h2 className="text-2xl md:text-[36px] font-semibold mb-[10px]">Our Impact</h2>
 
                 <p className="text-base">
-                Over the years, we've had the privilege of working with a wide array of clients, from 
+                Over the years, we&apos;ve had the privilege of working with a wide array of clients, from 
                 startups to established brands. Our portfolio showcases a track record of elevated 
                 brand profiles, enhanced digital footprints, and significant ROI improvements. But, 
                 beyond numbers, we measure our success by the lasting relationships we build and the 
-                positive changes we bring to our clients' businesses.
+                positive changes we bring to our clients&apos; businesses.
                 </p>
             </div>
         </section>
@@ -121,7 +121,7 @@ export default function AboutUs(){
 
                 <p className="text-base">
                 The digital world is in constant flux, with new technologies and platforms emerging at a 
-                rapid pace. At Shakazul LLC, we're not just keeping up; we're thinking ahead. Our 
+                rapid pace. At Shakazul LLC, we&apos;re not just keeping up; we&apos;re thinking ahead. Our 
                 commitment to innovation and excellence drives us to explore the frontier of digital 
                 possibilities, ensuring that our clients are always one step ahead.
                 </p>
@@ -137,9 +137,9 @@ export default function AboutUs(){
             <div className="flex flex-1 flex-col text-black">
                 <h2 className="text-base md:text-2xl font-semibold mb-[14px]">Join Us on Your Digital Journey</h2>
                 <p className="mb-[15px] text-[#5C5C5C] text-[14px] md:text-base">
-                    Whether you're looking to revamp your digital strategy, launch a new product, or redefine
+                    Whether you&apos;re looking to revamp your digital strategy, launch a new product, or redefine
                     your brand, Shakazul LLC is here to guide you through every step of the digital 
-                    landscape. Let's embark on this journey together and unlock the full potential of your 
+                    landscape. Let&apos;s embark on this journey together and unlock the full potential of your 
                     brand.
                 </p>
                 <div>
