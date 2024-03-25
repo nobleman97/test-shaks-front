@@ -28,7 +28,7 @@ const ThankYouEmail: React.FC<ThankYouEmailProps> = ({
       <p>I hope this email finds you well. We wanted to extend a heartfelt thank you for reaching out to Shakazu.</p> 
       <p>Your inquiry is very important to us, and we are thrilled to have the opportunity to assist you.</p>
       <p>Our team reach out swiftly as possible. Your satisfaction and trust in our services are our top priorities.</p>
-      <p>Should you have any more questions or require immediate assistance, please do not hesitate to contact us at contact@shakazu.com. We're here to help!</p>
+      <p>Should you have any more questions or require immediate assistance, please do not hesitate to contact us at contact@shakazu.com. We&apos;re here to help!</p>
       <p>Thank you once again for choosing Shakazu. We look forward to serving you and are excited to assist with your needs.</p>
       <div style={{marginTop: '30px', fontSize: '14px'}}>
         Warm regards,<br/>
