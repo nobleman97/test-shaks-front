@@ -9,7 +9,7 @@ export default function AboutUs(){
             <div className="px-[10.4%] pt-[76px] flex flex-col items-center md:items-start justify-center">
                 <h1 className="text-[32px] md:text-[38px] font-semibold mb-[41px]">About Shakazu</h1>
                 <p className="text-base md:text-2xl font-light max-w-[457px] text-center md:text-start">
-                    Shakazu is an award-winning social media marketing agency in 2023. We offer social media services, social media advertising services, email marketing services, and more. We create and manage top-performing social media campaigns for businesses.
+                Welcome to Shakazul LLC – Where Your Brand Meets Innovation and Creativity
                 </p>
             </div>
             
@@ -19,7 +19,13 @@ export default function AboutUs(){
 
         <section className="relative flex flex-col-reverse md:flex-row gap-[46px] px-[10.4%] pt-[72px] bg-white text-black">
             <div className="flex-1 mb-[55px] text-center md:text-start">
-                <p>Our company does this by managing social media networks such as Facebook, Instagram, Twitter, LinkedIn and Pinterest on your behalf. In short, we use relevant social media marketing services to help businesses grow and meet their goals, and because we&apos;re a full service agency that also offers the other digital marketing services mentioned, we&apos;re able to intertwine those services to support your social media efforts and vice versa for maximum results!</p>
+                <p>
+                In an era where digital presence defines business success, Shakazul LLC emerges as a 
+                beacon of innovation and creativity. Established with a vision to revolutionize digital 
+                interaction, we have dedicated ourselves to helping brands navigate the ever-evolving 
+                digital landscape. Our approach goes beyond mere audience reach; we strive to forge 
+                meaningful connections that elevate your brand and inspire your audience
+                </p>
             </div>
             <div className="flex-1 relative h-[241px] w-full md:h-auto">
                 <div className="h-[169px] w-full top-0 flex justify-center">
@@ -32,8 +38,15 @@ export default function AboutUs(){
 
         <section className="flex flex-col md:flex-row px-[10.4%] gap-[46px] text-center md:text-start  bg-white text-black ">
             <div  className="flex-1">
-                <h2 className="text-2xl md:text-[36px] font-semibold">What we do</h2>
-                <p className="text-base">What do we do? Well, it depends on you. What are your goals? Who is your audience? What do you need to get your brand making waves? Analytics are great, but they mean nothing if they aren&apos;t contributing to your bottom line. We could tout our prowess in SEO, rave about our wordsmithed blogs, show you our creative social media strategy… but at the end of the day, what matters is that you&apos;ve got customers coming to your website, learning about your product, and clicking that “Buy” button. Period.</p>
+                <h2 className="text-2xl md:text-[36px] font-semibold mb-[10px]">Our Genesis</h2>
+                <p className="text-base">
+                Founded by a team of digital enthusiasts and marketing savants, Shakazul LLC was 
+                born out of a desire to bridge the gap between businesses and their potential customers
+                in the digital space. Our founders saw the immense opportunities that digital platforms 
+                offer and the challenges businesses face in leveraging them. With expertise, passion, 
+                and a knack for creativity, we set out to transform digital encounters into memorable 
+                experiences.                
+                </p>
 
                 <p>What we really do is partner with your company to collectively work hard, build a distinctive brand, drive more traffic, and exponentially grow your sales. If that means new creative, more SEO, and a kickass email campaign, that&apos;s what we&apos;ll do. We want to see results for our clients, and we leverage that passion to make a difference with our digital marketing services — every day</p>
             </div>
@@ -41,10 +54,18 @@ export default function AboutUs(){
 
             <div className="flex-1 mt-[32px] md:mt-[81px]">
 
-                <h2 className="text-2xl md:text-[36px] font-semibold">Why we do it</h2>
+                <h2 className="text-2xl md:text-[36px] font-semibold mb-[10px]">Our Philosophy</h2>
 
-                <p className="text-base">Effective execution comes from a winning strategy: knowing what needs to be done and in what order to help our clients reach their goals. We believe in helping you hit your milestones while keeping things &apos;lean and mean&apos; so your brand can be more and do more.
-                Because we believe in doing more, we do more than just a “regular” digital marketing agency. We share friendships with our clients and align with particular industries. We love what we do and want to use our expertise to help you build a successful brand and profitable business</p>
+                <p className="text-base">
+                We believe in the transformative power of digital media. It's not just about being present
+                online; it's about making a statement, sparking conversations, and building a 
+                community. Our philosophy centers on three pillars:
+                </p>
+                <ul className="list-disc">
+                    <li>Innovation: Continuously exploring new ways to engage and captivate</li>
+                    <li>Creativity: Breaking the mold to create unique and impactful digital narratives.</li>
+                    <li>Results: Focusing on strategies that deliver tangible outcomes for our clients.</li>
+                </ul>
 
             </div>
         </section>
@@ -52,14 +73,57 @@ export default function AboutUs(){
 
         <section className="flex px-[10.4%] gap-[46px] text-center md:text-start bg-white text-black">
             <div className=" mt-[32px] md:mt-[42px]">
-                <h2 className="text-2xl md:text-[36px] font-semibold">How we do it</h2>
-
-                <p className="text-base">Every digital marketing agency has a sales pitch: you hear all about their capabilities, their technologies, and how incredible the results will be if you select their agency. But selecting an agency based on features is similar to marrying someone because you swiped right… there&apos;s a lot more than features when it comes to finding the right agency relationship.</p>
+                <h2 className="text-2xl md:text-[36px] font-semibold mb-[10px]">Our Services</h2>
 
                 <p className="text-base">
-                Of course, Volume Nine knows how to tactically build campaigns that work, write engaging and targeted blog posts, optimize websites for search, and manage social media like a boss. We have done those things for hundreds of clients — from Fortune 100 companies down to a friend&apos;s first business. The real difference, though, is that we know the craft of digital marketing inside and out. We know how to develop the right concoction of tactics, tools, and techniques that help you meet (and exceed) your goals… on a budget that is just right for you.</p>
+                    At Shakazul LLC, our services are designed to cover every aspect of digital marketing and brand presence:
+                </p>
+                    <ul className="list-disc">
+                        <li>Social Media Mastery: Crafting dynamic social media strategies that boost engagement, enhance brand visibility, and foster community.</li>
+                        <li>SEO & Content Marketing: Optimizing your online presence to rank higher in search results while delivering valuable content to your audience.</li>
+                        <li>Web Design & Development: Creating stunning, user-friendly websites that reflect your brand ethos and drive conversions.</li>
+                        <li>Digital Advertising: Leveraging the power of PPC, display ads, and social media advertising to reach a wider audience more effectively.</li>
+                        <li>Brand Strategy & Identity: Building a cohesive and resonant brand identity from the ground up</li>
+                    </ul>
+            </div>
+        </section>
 
-                <p className="text-base">Have a unique situation, a tough challenge, or an enormous opportunity? Have very specific problems that you need to be addressed? No matter your situation, our custom approach to digital marketing solutions will focus on the work that matters for you. We put your best interests first, always immersing ourselves in your business and working with your team to fill the gaps, get answers, and attract even better results for your brand
+        <section className="flex px-[10.4%] gap-[46px] text-center md:text-start bg-white text-black">
+            <div className=" mt-[32px] md:mt-[42px]">
+                <h2 className="text-2xl md:text-[36px] font-semibold mb-[10px]">Our Team</h2>
+
+                <p className="text-base">
+                Our team is our greatest asset. Comprised of digital marketers, creative geniuses, social
+                media gurus, content wizards, and tech innovators, we bring diverse skills and a unified 
+                vision to every project. Each member of the Shakazul LLC family is dedicated to staying 
+                ahead of industry trends, ensuring that we offer our clients cutting-edge solutions.
+                </p>
+            </div>
+        </section>
+
+        <section className="flex px-[10.4%] gap-[46px] text-center md:text-start bg-white text-black">
+            <div className=" mt-[32px] md:mt-[42px]">
+                <h2 className="text-2xl md:text-[36px] font-semibold mb-[10px]">Our Impact</h2>
+
+                <p className="text-base">
+                Over the years, we've had the privilege of working with a wide array of clients, from 
+                startups to established brands. Our portfolio showcases a track record of elevated 
+                brand profiles, enhanced digital footprints, and significant ROI improvements. But, 
+                beyond numbers, we measure our success by the lasting relationships we build and the 
+                positive changes we bring to our clients' businesses.
+                </p>
+            </div>
+        </section>
+
+        <section className="flex px-[10.4%] gap-[46px] text-center md:text-start bg-white text-black">
+            <div className=" mt-[32px] md:mt-[42px]">
+                <h2 className="text-2xl md:text-[36px] font-semibold mb-[10px]">Looking Ahead</h2>
+
+                <p className="text-base">
+                The digital world is in constant flux, with new technologies and platforms emerging at a 
+                rapid pace. At Shakazul LLC, we're not just keeping up; we're thinking ahead. Our 
+                commitment to innovation and excellence drives us to explore the frontier of digital 
+                possibilities, ensuring that our clients are always one step ahead.
                 </p>
             </div>
         </section>
@@ -71,8 +135,13 @@ export default function AboutUs(){
             </div>
 
             <div className="flex flex-1 flex-col text-black">
-                <h2 className="text-base md:text-2xl font-semibold mb-[14px]">Ready to grow your business online?</h2>
-                <p className="mb-[15px] text-[#5C5C5C] text-[14px] md:text-base">Whether you&apos;re trying to build brand awareness on social media or needing to drive more traffic from search engines, we&apos;re here to help you connect with your audience and hit those strategic goals</p>
+                <h2 className="text-base md:text-2xl font-semibold mb-[14px]">Join Us on Your Digital Journey</h2>
+                <p className="mb-[15px] text-[#5C5C5C] text-[14px] md:text-base">
+                    Whether you're looking to revamp your digital strategy, launch a new product, or redefine
+                    your brand, Shakazul LLC is here to guide you through every step of the digital 
+                    landscape. Let's embark on this journey together and unlock the full potential of your 
+                    brand.
+                </p>
                 <div>
                     <Button type={'button'} color='secondary' style="rounded-[40px] text-base px-[30px] py-[10px]">
                         Let&apos;s Talk

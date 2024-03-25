@@ -6,6 +6,7 @@ import Jumbotron from "../components/compounds/jumbotron";
 import * as Yup from 'yup';
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useRouter } from 'next/navigation'
 
 interface FormValues {
     name: string;
@@ -18,6 +19,7 @@ interface FormValues {
 
 export default function Signup(){ 
 
+    const router = useRouter()
     const validationSchema = Yup.object().shape({
         name: Yup.string().required('Name is required'),
         email: Yup.string().email('Invalid email address').required('Email is required'),
@@ -43,7 +45,14 @@ export default function Signup(){
           console.log(values);
           // Handle form submission, such as sending data to an API
             axios.post('/api/users/create', values).then(res => {
-                toast.success('User created')
+
+                if(res.data?.error){
+                    toast.error(res.data?.error)
+                }else{
+                    toast.success(res.data.message)
+                    router.push('/login')
+                }
+                
             }).catch(err => {
                 toast.error('error creating user')
             })

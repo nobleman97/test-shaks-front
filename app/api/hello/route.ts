@@ -1,46 +1,44 @@
 import { NextResponse } from "next/server";
-import Mailgun, { Interfaces, MailgunClientOptions, MessagesSendResult } from 'mailgun.js';
+import { Resend } from "resend";
+import ThankYouEmail from "@/app/components/email-templates/contact-us";
 
-const FormData = require('form-data');
+// const FormData = require('form-data');
 const { google } = require('googleapis');
 
-const mailgun = new Mailgun(FormData);
+// const mailgun = new Mailgun(FormData);
 
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST( req: Request) {
-    
-    const sheetData = convertObjectToArray(await req.json()) // data that needs to be added to the sheetlater
 
-    if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
-        return NextResponse.json({message: 'Mailgun credentials are not properly set' }, { status:500 } );
-      }
+    const body = await req.json();
+    console.log({body})
 
-    const mailgunClient: Interfaces.IMailgunClient = mailgun.client({
-        username: 'api',
-        key: process.env.MAILGUN_API_KEY!
-    });
+    const sheetData = convertObjectToArray(body) // data that needs to be added to the sheetlater
 
     try {
 
-    //send out emails to leads who fill the form 
-     const email = await mailgunClient.messages.create(
-        process.env.MAILGUN_DOMAIN,
-        {
-          from: `${process.env.MAILGUN_DEFAULT_EMAIL_NAME} <${process.env.MAILGUN_DEFAULT_EMAIL}>`,
-          to: 'desmondezoojile@gmail.com',
-          subject: "new hamshire",
-          template: "testmail",
-        //   'h:X-Mailgun-Variables': rest['h:X-Mailgun-Variables'],
-        },
-      );   
+      const data = await resend.emails.send({
+        from: 'Shakazu <onboarding@resend.dev>',
+        to: [body.email],
+        subject: 'Thank You for Contacting Us',
+        react: ThankYouEmail({   
+          customerName: body.firstname,  
+          yourName: "Ola", 
+          yourPosition: "C.E.O" 
+        }),
+      });
+  
 
-      if (!email) {
+    //
+
+      if (!data) {
         return NextResponse.json({error: "couldn't send the email"}, {status: 500});
       }
 
       appendDataToSheet(sheetData).then(res => console.log('added successfully')).catch(error => console.log({err: error.message}))
 
-      return NextResponse.json({ message: "Email sent successfully", data: email }, {status: 200});
+      return NextResponse.json({ message: "Email sent successfully", data: data }, {status: 200});
 
     } catch (error: any) {
       return NextResponse.json({error: error.message}, {status: error.status});
@@ -48,11 +46,6 @@ export async function POST( req: Request) {
   
 
 
-
-    //   'h:X-Mailgun-Variables': JSON.stringify({
-    //     firstname: dto.firstname,
-    //     link: `${this.frontendUrl}/verify_email/${user._id}`,
-    //   })
 
   
 }
