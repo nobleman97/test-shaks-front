@@ -19,7 +19,7 @@ build_frontend:
     - npm run start
   before_script:
     - apk update
-    - apk add git node npm
+    - apk add git nodejs npm
 
 
 deploy:
