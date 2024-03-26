@@ -3,7 +3,7 @@ stages:
   - deploy
   
 variables:
-  - SERVER_IP: "18.189.194.0"
+  SERVER_IP: "18.189.194.0"
 
 
 
