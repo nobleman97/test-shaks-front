@@ -9,12 +9,14 @@ variables:
 
 build_frontend:
   stage: build
-  # image: node:21-alpine
+  image: 4568910/gitlab_runner
 
   # rules:
   #   - if: '$CI_COMMIT_BRANCH == "main"'
   script:
-    - git
+    - git checkout main
+    - npm i && npm run build
+    - npm run start
   before_script:
     - apt update
     - apt install git node npm
@@ -22,6 +24,7 @@ build_frontend:
 
 deploy:
   stage: deploy
+  image: 4568910/gitlab_runner
 
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
