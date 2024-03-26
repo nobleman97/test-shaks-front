@@ -6,6 +6,7 @@ variables:
   SERVER_IP: "18.189.194.0"
 
 
+
 build_frontend:
   stage: build
   image: 4568910/gitlab_runner
