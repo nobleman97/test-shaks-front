@@ -15,6 +15,7 @@ build_frontend:
   #   - if: '$CI_COMMIT_BRANCH == "main"'
   script:
     - git checkout main
+    - touch .env && echo $FRONTEND_ENV > .env
     - npm i && npm run build
     - npm run start
   before_script:
