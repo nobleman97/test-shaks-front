@@ -37,13 +37,15 @@ deploy:
     - apk update
     - apk add -qq openssh-client
     - eval $(ssh-agent -s)
-    - touch ssh_key && echo $PRIVATE_KEY > ssh_key
-    - chmod 600 ssh_key
-    - ssh-add ssh_key
+    # - touch ssh_key && echo $PRIVATE_KEY > ssh_key
+    - echo "$PRIVATE_KEY" | tr -d '\r' | ssh-add -
     - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $SERVER_IP >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
   script:
-    - ssh "ubuntu@$SERVER_IP" -p 22 "bash /home/ubuntu/scripts/deploy_frontend.sh"
+    - ssh -o StrictHostKeyChecking=no "ubuntu@$SERVER_IP" -p 22 "bash /home/ubuntu/scripts/deploy_frontend.sh"
   
 
 # variables:
