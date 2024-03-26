@@ -3,8 +3,7 @@ stages:
   - deploy
   
 variables:
-  - SERVER_IP: "18.189.194.0"
-
+  SERVER_IP: "18.189.194.0"
 
 
 build_frontend:
@@ -18,8 +17,8 @@ build_frontend:
     - npm i && npm run build
     - npm run start
   before_script:
-    - apt update
-    - apt install git node npm
+    - apk update
+    - apk add git node npm -y
 
 
 deploy:
@@ -33,7 +32,7 @@ deploy:
   when: manual
 
   before_script:
-    - apt update
+    - apk update update
     - eval $(ssh-agent -s)
     - ssh-add <(echo "$PRIVATE_KEY")
     - mkdir -p ~/.ssh
