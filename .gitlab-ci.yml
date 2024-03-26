@@ -17,7 +17,7 @@ build_frontend:
     - git checkout main
     - touch .env && echo $FRONTEND_ENV > .env
     - npm i && npm run build
-    - npm run start
+
   before_script:
     - apk update
     - apk add git nodejs npm
