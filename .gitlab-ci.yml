@@ -15,7 +15,8 @@ build_frontend:
   #   - if: '$CI_COMMIT_BRANCH == "main"'
   script:
     - git checkout main
-    - touch .env && echo $FRONTEND_ENV > .env
+    - touch .env && echo $RESEND_API_KEY >> .env 
+    - echo $BACKEND_URL >> .env
     - npm i && npm run build
 
   before_script:
@@ -45,7 +46,7 @@ deploy:
     - chmod 644 ~/.ssh/known_hosts
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
   script:
-    - ssh -o StrictHostKeyChecking=no "ubuntu@$SERVER_IP" -p 22 "cd /var/www/website && git pull origin main && sudo systemctl restart frontend"
+    - ssh -o StrictHostKeyChecking=no "ubuntu@$SERVER_IP" -p 22 "cd /var/www/website && git checkout main && git pull origin main && sudo systemctl restart frontend"
   
 
 # variables:
