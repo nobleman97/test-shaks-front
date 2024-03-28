@@ -14,6 +14,7 @@ try {
     const url = `${process.env.BACKEND_URL}/payment/verify?session_id=${session_id}`
 
     const response = await axios.get(url);
+    console.log({response})
 
     const isSuccessful = response.data.data.status; 
     
