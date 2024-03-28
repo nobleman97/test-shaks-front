@@ -23,7 +23,7 @@ try {
 
     redirectUrl.searchParams.set("status", isSuccessful == "success" ? "success" : "failed");
 
-    return NextResponse.redirect(redirectUrl);
+    return NextResponse.redirect(redirectUrl.toString());
   } catch (error) {
     console.error({error});
     const frontendurll = process.env.NEXT_PUBLIC_BASE_URL;
@@ -32,6 +32,6 @@ try {
 
     redirectUrl.searchParams.set("status", "failed");
 
-    return NextResponse.redirect(redirectUrl);
+    return NextResponse.redirect(redirectUrl.toString());
   }
 }
