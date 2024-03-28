@@ -6,6 +6,7 @@ try {
     const pageUrl = req.nextUrl;
 
     const query = pageUrl.searchParams;
+    const frontendurl = process.env.NEXT_PUBLIC_BASE_URL;
 
     const session_id = query.get("session_id")
     console.log(
@@ -18,15 +19,16 @@ try {
 
     const isSuccessful = response.data.data.status; 
     
-    const redirectUrl = new URL('/pricing', req.url);
+    const redirectUrl = new URL('/pricing', frontendurl);
 
     redirectUrl.searchParams.set("status", isSuccessful == "success" ? "success" : "failed");
 
     return NextResponse.redirect(redirectUrl);
   } catch (error) {
     console.error({error});
+    const frontendurll = process.env.NEXT_PUBLIC_BASE_URL;
 
-    const redirectUrl = new URL('/pricing', req.url);
+    const redirectUrl = new URL('/pricing', frontendurll);
 
     redirectUrl.searchParams.set("status", "failed");
 
