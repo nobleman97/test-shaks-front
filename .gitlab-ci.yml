@@ -17,6 +17,7 @@ build_frontend:
     - git checkout main
     - touch .env && echo $RESEND_API_KEY >> .env 
     - echo $BACKEND_URL >> .env
+    - echo $NEXT_PUBLIC_BASE_URL >> .env
     - npm i && npm run build
 
   before_script:
