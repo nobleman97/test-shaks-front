@@ -21,6 +21,7 @@ export default function PriceCard({type, id, price, description, features}:{type
     const toggleFeaturesVisibility = () => {
         setShowAllFeatures(!showAllFeatures);
     };
+      
 
     const handlePaymentRequest = async () => {
         try {

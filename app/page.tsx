@@ -7,6 +7,7 @@ import TestimonialsVidSec from "./components/compounds/videoTestimonial";
 import ServicesCard from "./components/molecules/services-card";
 import TestimonailCard from "./components/molecules/testimonial-card";
 import { useRouter } from 'next/navigation'
+import { Icon } from "@iconify/react";
 
 export default function Home() {
   const router = useRouter()
@@ -78,8 +79,12 @@ export default function Home() {
               instagram: ''
             }} 
             description={'We offer full-service social media management services. We transform your social media presence with high-quality content, daily activity, engagement-monitoring and increased followers. In order for followers to convert into... '} 
-            route={'/'} 
-          />
+            route={'/our-services#socialMedia'} 
+          >
+              <Icon icon="skill-icons:instagram" />
+              <Icon icon="logos:facebook" />
+              <Icon icon="skill-icons:linkedin" />
+          </ServicesCard>
 
           <ServicesCard 
             services={'Email and SMS Marketing Services'} 
@@ -90,8 +95,13 @@ export default function Home() {
             }} 
             description={'Email marketing is not dead. In fact, for every $1 spent on email marketing, the average ROI is $36. Your customers check their email every day. Our email marketing services will help you stay top of mind and speed up your sales cycle, all while... '} 
             button={"secondary"}
-            route={'/'} 
-          />
+            route={'/our-services#emailMarketing'} 
+          >
+            <Icon icon="ic:round-email" />
+            <Icon icon="entypo:email" />
+            <Icon icon="bi:chat-left-dots" />
+          </ServicesCard>
+
 
           <ServicesCard 
             services={'PPC Management Services'} 
@@ -102,8 +112,11 @@ export default function Home() {
             }} 
             description={'When someone types in the product or service you offer into the Google search bar, does your website appear? If not, you’re probably not implementing PPC! PPC stands for pay per click and it is synonymous with SEM or search engine marketing. You...'}
             button={"warning-yellow"}
-            route={'/'} 
-          />
+            route={'/our-services#ppcMgt'} 
+          >
+            <Icon icon="tabler:hand-click" />
+            <Icon icon="ic:baseline-ads-click" />
+          </ServicesCard>
 
         </div>
 

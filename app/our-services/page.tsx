@@ -18,7 +18,7 @@ export default function OurService(){
         </Jumbotron>
 
         <section className="bg-white text-black px-[3.8%] md:px-[10.4%] py-[83px]">
-            <h2 className="text-[32px] font-semibold max-w-[555px] mb-[9px]">Social Media Management Services</h2>
+            <h2 id="socialMedia" className="text-[32px] font-semibold max-w-[555px] mb-[9px]">Social Media Management Services</h2>
             <p className="text-[#F53300] mb-[9px]">Increase Your Engagement & Sales From Social Media</p>
             <Button color="secondary" style="rounded-[40px] px-[70px] py-[10px]" >
                 Get My Quote
@@ -61,7 +61,7 @@ export default function OurService(){
 
 
         <section  className="bg-white text-black  px-[3.8%] md:px-[10.4%] py-[83px]">
-            <h2 className="text-[32px] font-semibold max-w-[555px] mb-[9px]">Email Marketing Services</h2>
+            <h2 className="text-[32px] font-semibold max-w-[555px] mb-[9px]" id="emailMarketing">Email Marketing Services</h2>
             <p className="text-[#F53300] mb-[9px]">Increase Your Customer Base</p>
             <Button color="warning-yellow" style="rounded-[40px] px-[70px] py-[10px]" >
                 Get My Quote
@@ -210,7 +210,7 @@ export default function OurService(){
         </section>
 
         <section className=" px-[3.8%] md:px-[10.4%] bg-white text-black pb-[80px] py-[83px]">
-            <h2  className="text-[32px] font-semibold max-w-[555px] mb-[12px]">PPC Management Services</h2>
+            <h2  className="text-[32px] font-semibold max-w-[555px] mb-[12px]" id="ppcMgt">PPC Management Services</h2>
             <p className="text-[#F53300] mb-[12px]">For More Traffic & Conversion</p>
             <Button color="dark" style="rounded-[40px] px-[70px] py-[10px]" >
                 Get My Quote
