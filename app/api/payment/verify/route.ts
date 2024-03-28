@@ -6,7 +6,9 @@ try {
     const pageUrl = req.nextUrl;
 
     const query = pageUrl.searchParams;
-    const frontendurl = process.env.NEXT_PUBLIC_BASE_URL;
+    const frontendurl = process.env.FRONTEND_BASE_URL;
+    console.log({frontendurl});
+    
 
     const session_id = query.get("session_id")
     console.log(
@@ -26,7 +28,7 @@ try {
     return NextResponse.redirect(redirectUrl.toString());
   } catch (error) {
     console.error({error});
-    const frontendurll = process.env.NEXT_PUBLIC_BASE_URL;
+    const frontendurll = process.env.FRONTEND_BASE_URL;
 
     const redirectUrl = new URL('/pricing', frontendurll);
 
