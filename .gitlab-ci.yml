@@ -1,26 +1,72 @@
 stages:
   - build
+  - deploy
   
-
 variables:
-  DOCKER_REGISTRY: "4568910/shakazu-frontend"
-  CI_REGISTRY_USER: "4568910"
-  CI_REGISTRY_PASSWORD: "$DOCKER_PASSWORD"
+  SERVER_IP: "18.189.194.0"
 
 
-build_and_push_frontend_image:
+
+build_frontend:
   stage: build
-  image: docker:stable
-  services:
-    - docker:dind
+  image: 4568910/gitlab_runner
+
+  # rules:
+  #   - if: '$CI_COMMIT_BRANCH == "main"'
+  script:
+    - git checkout main
+    - touch .env && echo $FRONTEND_ENV > .env
+    - npm i && npm run build
+
+  before_script:
+    - apk update
+    - apk add git nodejs npm
+
+
+deploy:
+  stage: deploy
+  image: 4568910/gitlab_runner
+
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
+  # dependencies:
+  #   - build_frontend
+  when: manual
+
+  before_script:
+    - apk update
+    - apk add -qq openssh-client
+    - eval $(ssh-agent -s)
+    # - touch ssh_key && echo $PRIVATE_KEY > ssh_key
+    - echo "$PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $SERVER_IP >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
   script:
-    - docker build -t $DOCKER_REGISTRY:$CI_PIPELINE_IID .
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD 
-    - docker push $DOCKER_REGISTRY:$CI_PIPELINE_IID
-    - docker tag $DOCKER_REGISTRY:$CI_PIPELINE_IID $DOCKER_REGISTRY:latest # make the most recent latest
-    - docker push $DOCKER_REGISTRY:latest       # push as latest
+    - ssh -o StrictHostKeyChecking=no "ubuntu@$SERVER_IP" -p 22 "cd /var/www/website && git pull origin main && sudo systemctl restart frontend"
+  
+
+# variables:
+#   DOCKER_REGISTRY: "4568910/shakazu-frontend"
+#   CI_REGISTRY_USER: "4568910"
+#   CI_REGISTRY_PASSWORD: "$DOCKER_PASSWORD"
+
+
+# build_and_push_frontend_image:
+#   stage: build
+#   image: docker:stable
+#   services:
+#     - docker:dind
+#   rules:
+#     - if: '$CI_COMMIT_BRANCH == "main"'
+#   script:
+#     - docker build -t $DOCKER_REGISTRY:$CI_PIPELINE_IID .
+#     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD 
+#     - docker push $DOCKER_REGISTRY:$CI_PIPELINE_IID
+#     - docker tag $DOCKER_REGISTRY:$CI_PIPELINE_IID $DOCKER_REGISTRY:latest # make the most recent latest
+#     - docker push $DOCKER_REGISTRY:latest       # push as latest
 
 
 
